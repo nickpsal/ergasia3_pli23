@@ -1,0 +1,415 @@
+/***** set font, color, margin, etc for all pages *****/
+body{
+	background-color: #fafafa;
+	color: #404040;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	line-height: 1.6em;
+	margin: 0px;
+	padding: 0px;
+}
+
+
+
+/***** global *****/
+.container{
+	width: 80%;
+	margin: auto;
+	overflow: hidden;
+}
+
+.button{
+	text-decoration: none;
+	color: white;
+	background-color: #404040;
+	padding: 10px 25px;
+	border: 3px;
+	border-color: gray;
+	border-style: solid;
+	border-radius: 30px;
+}
+.button:hover{
+	background-color: #303030;
+}
+.button:active{
+	background-color: #303030;
+	border-style: inset;
+}
+
+.last-section-before-footer{
+	margin-bottom: 60px;
+}
+
+
+
+/***** header - brand logo, navigation bar, login button *****/
+/* header */
+#main-header{
+	padding-top: 1em;
+	padding-bottom: 0.8em;
+	overflow: hidden;
+	background-color: #606060;
+	color: white;
+	margin-bottom: 10px
+}
+
+/* table inside header */
+#logo-nav-login{
+	width: 100%;
+	text-align: center;
+	border-collapse: collapse;
+}
+
+/* 1st table cell - logo */
+#logo-nav-login tbody td:nth-child(1){
+	text-align: left;
+	width: 20%;
+	min-width: 164px;
+}
+
+/* 2nd table cell - navigation bar */
+#logo-nav-login tbody td:nth-child(2){
+	text-align: center;
+	width: 60%;
+}
+
+/* 3rd table cell - login button */
+#logo-nav-login tbody td:nth-child(3){
+	text-align: right;
+	width: 20%;
+}
+
+/* brand logo, fire effect */
+#branding{
+	padding-left: 20px;
+	font-size: 36px;
+	text-shadow: 0 -1px 4px #ffffff, 0 -2px 10px #ffff00, 0 -10px 20px #ff8000, 0 -18px 40px #ff0000;
+}
+
+/* brand logo link to home page */
+#branding a{
+	color: white;
+	text-decoration: none;
+}
+
+/* navigation bar list */
+#main-header nav ul{
+	margin: 0px;
+	padding: 0px;
+}
+
+/* navigation bar list items */
+#main-header li{
+	display: inline;
+	padding-left: 12px;
+	padding-right: 12px;
+}
+
+/* navigation bar links */
+#main-header nav a{
+	color: white;
+	text-decoration: none;
+	font-size: 18px;
+}
+
+ /* navigation bar current page */
+#main-header .current a{
+	color: #f0491b;
+}
+
+/* span outside login button */
+#main-header #login{
+	padding-top: 0em;
+	float: right;
+	padding-right: 20px;
+	font-size: 18px;
+}
+
+
+
+/***** footer - terms of use, privacy policy *****/
+/* footer */
+#main-footer{
+	position: fixed;
+	bottom: 0px;
+	width: 100%;
+	background-color: #606060;
+	padding: 2px;
+	line-height: 1em;
+	padding-top: 6px;
+	padding-bottom: 6px;
+}
+
+/* table inside footer */
+#main-footer table{
+	width: 100%;
+	text-align: center;
+}
+
+/* table cells */
+#main-footer td{
+	text-align: center;
+	width: 50%;
+}
+
+/* footer links */
+#main-footer a{
+	color: white;
+	font-size: 13px;
+}
+
+
+
+/***** index.html *****/
+/* price headings */
+#index-daily-prices ul h2{
+	margin: 0px;
+	padding: 0px 0px 8px 0px;   /* (top, right, bottom, left) */
+	line-height: 1em;
+}
+
+/* prices */
+#index-daily-prices ul p{
+	margin: 0px;
+	padding: 0px 0px 22px 0px;
+	line-height: 1em;
+}
+
+/* announcements dates */
+#index-latest-announcements ul li h3{
+	margin: 0px;
+	padding: 0px 0px 8px 0px;
+	line-height: 1em;
+}
+
+/* announcements titles */
+#index-latest-announcements ul li h2{
+	margin: 0px;
+	padding: 0px 0px 22px 0px;
+	line-height: 1em;
+}
+
+
+
+/***** search.html *****/
+/* search filters table */
+#search-filters-table{
+	width: 100%;
+	text-align: center;
+	border-collapse: collapse;
+	margin-bottom: 30px;
+}
+
+/* 1st table cell - location */
+#search-filters-table tbody td:nth-child(1){
+	text-align: left;
+	width: auto;
+	padding: 0px;
+}
+
+/* 2nd table cell - fuel type */
+#search-filters-table tbody td:nth-child(2){
+	text-align: left;
+	width: auto;
+}
+
+/* 3rd table cell - search button */
+#search-filters-table tbody td:nth-child(3){
+	text-align: right;
+	width: auto;
+}
+
+/* search results table */
+table.minimalistBlack {
+  border: 2px solid #404040;
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+}
+table.minimalistBlack td, table.minimalistBlack th {
+  border: 1px solid #404040;
+  padding: 5px 4px;
+}
+table.minimalistBlack tbody td {
+  font-size: 13px;
+}
+table.minimalistBlack thead {
+  background: #cfcfcf;
+  background: -moz-linear-gradient(top, #dbdbdb 0%, #d3d3d3 66%, #cfcfcf 100%);
+  background: -webkit-linear-gradient(top, #dbdbdb 0%, #d3d3d3 66%, #cfcfcf 100%);
+  background: linear-gradient(to bottom, #dbdbdb 0%, #d3d3d3 66%, #cfcfcf 100%);
+  border-bottom: 2px solid #404040;
+}
+table.minimalistBlack thead th {
+  font-size: 15px;
+  font-weight: bold;
+  color: #404040;
+  text-align: center;
+}
+.search-dropdown{
+	width: 184px;
+	font-size: 16px;
+	color: #404040;
+	padding: 1px 0px 2px 0px;
+}
+
+
+
+/***** submit.html *****/
+/* submit form */
+#submit-form form label{
+	display: inline-block;
+	width: 240px;
+	margin: 8px 0px 0px 20px;   /* (top, right, bottom, left) */
+	box-sizing: border-box;
+}
+#submit-form form input{
+	width: 300px;
+	font-size: 16px;
+	color: #404040;
+	margin: 0px 0px 4px 20px;
+	box-sizing: border-box;
+}
+.submit-dropdown{
+	width: 300px;
+	font-size: 16px;
+	color: #404040;
+	margin: 0px 0px 4px 20px;
+	padding: 1px 0px 2px 0px;
+	box-sizing: border-box;
+}
+#submit-form #note{
+	width: 300px;
+	font-size: 11px;
+	font-weight: bold;
+	line-height: 0em;
+	padding: 10px 0px 0px 26px;
+}
+#submit-form button{
+	font-size: 16px;
+	margin: 30px 0px 8px 100px;
+	box-sizing: border-box;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type="number"] {
+    --moz-appearance: textfield;
+}
+
+/***** announcements.html *****/
+/* announcements list */
+#announcements-list{
+	border-style: solid;
+	border-color: lightgray;
+	border-radius: 8px;
+	overflow-y: scroll;
+	height: calc(85vh - 160px);   /* 85vh minus 160px to account for the header and footer */
+	margin: 20px 20px 0px 20px;   /* (top, right, bottom, left) */
+	box-sizing: border-box;
+}
+
+/* announcements dates */
+#announcements-list ul li h3{
+	margin: 0px;
+	padding: 0px 0px 8px 0px;
+	line-height: 1em;
+}
+
+/* announcements titles */
+#announcements-list ul li h2{
+	margin: 0px;
+	padding: 0px 0px 8px 0px;
+	line-height: 1em;
+}
+
+/* paragraphs with the announcement text */
+#announcements-list p{
+	border-style: solid;
+	border-color: lightgray;
+	border-radius: 8px;
+	padding: 5px;
+	margin: 0px 20px 22px 0px;
+}
+
+
+
+/***** login.html *****/
+/* login form */
+#login-form form label{
+	display: inline-block;
+	width: 120px;
+	margin: 8px 0px 0px 20px;   /* (top, right, bottom, left) */
+	box-sizing: border-box;
+}
+#login-form form input{
+	width: 300px;
+	font-size: 16px;
+	color: #404040;
+	margin: 0px 0px 4px 20px;
+	box-sizing: border-box;
+}
+#login-form button{
+	font-size: 16px;
+	margin: 30px 0px 8px 110px;
+	box-sizing: border-box;
+}
+#login-form #signup-link{
+	width: 300px;
+}
+#login-form a{
+	font-size: 14px;
+	color: #404040;
+	margin: 0px 0px 0px 85px;
+}
+
+
+
+/***** signup.html *****/
+/* signup form */
+.error{
+	display: inline-block;
+	width: 640px;
+	background-color: gray;
+	color: white;
+	margin: 0px 0px 4px 20px;
+	box-sizing: border-box;
+	font-size: 16px;
+}
+
+#signup-form form label{
+	display: inline-block;
+	width: 240px;
+	margin: 8px 0px 0px 20px;   /* (top, right, bottom, left) */
+	box-sizing: border-box;
+}
+#signup-form form input{
+	width: 300px;
+	font-size: 16px;
+	color: #404040;
+	margin: 0px 0px 4px 20px;
+	box-sizing: border-box;
+}
+.signup-dropdown{
+	width: 300px;
+	font-size: 16px;
+	color: #404040;
+	margin: 0px 0px 4px 20px;
+	padding: 1px 0px 2px 0px;
+	box-sizing: border-box;
+}
+#signup-form #note{
+	width: 300px;
+	font-size: 11px;
+	font-weight: bold;
+	line-height: 0em;
+	padding: 10px 0px 0px 26px;
+}
+#signup-form button{
+	font-size: 16px;
+	margin: 30px 0px 8px 100px;
+	box-sizing: border-box;
+}
