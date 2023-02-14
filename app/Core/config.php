@@ -13,9 +13,9 @@
         //break the url in array by / symbol
         $parts = explode('/', $current_url);
         //asembly the current url
-        $without_controller = implode('/', array_slice($parts, 0, count($parts) - 1));
-        define('ROOT', $without_controller . "/public");
-        define('URL', $without_controller . "/");
+        $abs_path = implode('/', array_slice($parts, 0, count($parts) - 1));
+        define('ROOT', $abs_path . "/public");
+        define('URL', $abs_path . "/");
         define('DB_HOST', 'localhost');
         define('DB_USER', 'root');
         define('DB_PASS', 'toor');

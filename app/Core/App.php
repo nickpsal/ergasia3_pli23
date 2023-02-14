@@ -36,11 +36,6 @@
             call_user_func_array([$controller, $this->method], [$url]);
         }
 
-        //get the current method
-        public function getMethod() {
-            return $this->method;
-        }
-
         //split url to arrays
         private function splitURL() {
             if (empty($_GET['url'])) {
