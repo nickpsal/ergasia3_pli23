@@ -3,7 +3,7 @@
 <section id="index-daily-prices">
     <div class="container">
         <h1>Ημερήσια σύνοψη τιμών</h1>
-        <h3>Τετάρτη, 25/01/2023</h3>
+        <h3><?=get_date()?></h3>
         <ul>
             <li>
                 <h2>Τιμή αμόλυβδης βενζίνης 95</h2>

@@ -67,8 +67,11 @@
         return "";
     }
 
-    /** returns a user readable date format 
-     * converts 2023-10-28 to 28th octomber 2023 **/
-    function get_date($date){
-        return date("jS M, Y",strtotime($date));
+    /** get current day and current date 
+     * Translates the name of the day from english to greek **/
+    function get_date(){
+        $english_days = array('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday');
+        $greek_days = array('Κυριακή', 'Δευτέρα', 'Τρίτη', 'Τεττάρτη', 'Πέμπτη', 'Παρασκευή', 'Σάββατο');
+        $current_day = str_replace($english_days, $greek_days, date('l'));
+        return $current_day . ", " . date("d/m/Y");
     }
