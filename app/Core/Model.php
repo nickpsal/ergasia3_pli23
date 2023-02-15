@@ -44,7 +44,7 @@
             return false;
         }
 
-        public function insert_new_user($data){
+        public function insert_query($data){
             if (!empty($this->allowedColumns)) {
                 foreach($data as $key=>$value) {
                     if (!in_array($key, $this->allowedColumns)) {
@@ -52,15 +52,17 @@
                     }
                 }
             }
-            $data['Password_Χρήστη'] = password_hash($data['Password_Χρήστη'],PASSWORD_DEFAULT);
-            $data['Ρόλος_Χρήστη'] = 1;
+            if ($this->db_table === 'user') {
+                $data['password_user'] = password_hash($data['password_user'],PASSWORD_DEFAULT);
+                $data['role_user'] = 1;
+            }
             $keys = array_keys($data);
             $query = "insert into $this->db_table (".implode(",", $keys).") values (:".implode(",:", $keys).")";
             $this->query($query, $data);
             return false;
         }
 
-        public function update($id, $data, $id_column = 'id') {
+        public function update_query($id, $data, $id_column = '') {
             if (!empty($this->allowedColumns)) {
                 foreach($data as $key=>$value) {
                     if (!in_array($key, $this->allowedColumns)) {
@@ -75,9 +77,6 @@
             }
             $query = trim($query, ", ");
             $data[$id_column] = $this->update_id;
-            if (isset($data['user_password'])) {
-                $data['user_password'] = password_hash($data['user_password'],PASSWORD_DEFAULT);
-            }
             $query .= " where $this->update_id = :$this->update_id";
             $this->query($query, $data);
             return false;

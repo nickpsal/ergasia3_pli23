@@ -27,8 +27,8 @@
         <ul>
             <?php for ($i=0; $i<count($data['anakoinoseis']); $i++) : ?>
                 <li>
-                    <h3><?=$data['anakoinoseis'][$i]->Ημερομηνία_Καταχώρησης?></h3>
-                    <h2><a href="announcements#<?=$data['anakoinoseis'][$i]->Ημερομηνία_Καταχώρησης?>"><?=$data['anakoinoseis'][$i]->Τίτλος_Ανακοίνωσης?></a></h2>
+                    <h3><?=$data['anakoinoseis'][$i]->data_anakoinosis?></h3>
+                    <h2><a href="announcements#<?=$data['anakoinoseis'][$i]->data_anakoinosis?>"><?=$data['anakoinoseis'][$i]->title_anakoinosis?></a></h2>
                 </li>
             <?php endfor;?>
         </ul>

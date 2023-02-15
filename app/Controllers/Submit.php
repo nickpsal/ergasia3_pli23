@@ -1,0 +1,17 @@
+<?php
+    class Submit{
+        use Controller;
+        public function index($data = []){
+            $data['title'] = 'Καταχώρηση';
+            //get the menu items from database
+            $menu = new Menu;
+            $data['menu-items'] = $menu->find_all();
+            $n = new Nomoi;
+            $data['nomoi'] = $n->find_all();
+            $k = new Kausimo;
+            $data['kausima'] = $k->find_all();
+            $d = new Dimos;
+            $data['dimos'] = $d->find_all();
+            $this->view('submit', $data); 
+        }
+    }

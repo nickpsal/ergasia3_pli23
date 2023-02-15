@@ -10,15 +10,15 @@
         protected $update_id = 'id_user';
         //allowed columns of the db
         protected $allowedColumns = [
-            'Επωνυμία_Χρήστη',
-            'Αφμ_Χρήστη',
-            'Διεύθυνση_Χρήστη',
-            'Δήμος_Χρήστη',
-            'Νομός_Χρήστη',
-            'Είδος_Καυσίμου',
-            'Email_Χρήστη',
-            'Ρόλος_Χρήστη',
-            'Username_Χρήστη',
-            'Password_Χρήστη'
+            'eponimia_user',
+            'afm_user',
+            'address_user',
+            'dimos_user',
+            'nomos_user',
+            'eidos_kausimou',
+            'email_user',
+            'role_user',
+            'username_user',
+            'password_user'
         ];
     }

@@ -3,7 +3,6 @@
 		<section id="submit-form" class="last-section-before-footer">
 			<div class="container">
 				<h1>Καταχώρηση προσφοράς</h1>
-
 				<form accept-charset="UTF-8" action="login.php" autocomplete="on" method="POST">
 					<div>
 						<label for="name">Επωνυμία επιχείρησης:</label>
@@ -21,7 +20,7 @@
 						<label for="submit-location-dropdown">Νομός:</label>
 						<select name="submit-location-dropdown" class="submit-dropdown">
 							<?php for ($i=0; $i<count($data['nomoi']); $i++) : ?>
-								<option value="<?=$data['nomoi'][$i]->Ονομασία_Νομού?>"><?=$data['nomoi'][$i]->Ονομασία_Νομού?></option>
+								<option value="<?=$data['nomoi'][$i]->onomasia_nomou?>"><?=$data['nomoi'][$i]->onomasia_nomou?></option>
 							<?php endfor;?>
 						</select>
 					</div>
@@ -29,7 +28,7 @@
 						<label for="submit-municipality-dropdown">Δήμος:</label>
 						<select name="submit-municipality-dropdown" class="submit-dropdown">
 							<?php for ($i=0; $i<count($data['dimos']); $i++) : ?>
-								<option value="<?=$data['dimos'][$i]->Ονομασία_Δήμου?>"><?=$data['dimos'][$i]->Ονομασία_Δήμου?></option>
+								<option value="<?=$data['dimos'][$i]->name_dimos?>"><?=$data['dimos'][$i]->name_dimos?></option>
 							<?php endfor;?>
 						</select>
 					</div>
@@ -37,7 +36,7 @@
 						<label for="submit-fuel-type-dropdown">Είδος καυσίμου:</label>
 						<select name="submit-fuel-type-dropdown" class="submit-dropdown">
 							<?php for ($i=0; $i<count($data['kausima']); $i++) : ?>
-								<option value="<?=$data['kausima'][$i]->id_Καυσίμου?>"><?=$data['kausima'][$i]->Τύπος_Καυσίμου?></option>
+								<option value="<?=$data['kausima'][$i]->id_kausimou ?>"><?=$data['kausima'][$i]->tipos_kausimou?></option>
 							<?php endfor;?>
 						</select>
 					</div>

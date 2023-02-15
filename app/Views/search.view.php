@@ -10,7 +10,7 @@
 								<label for="search-location-dropdown">Νομός:</label>
 								<select name="search-location-dropdown" class="search-dropdown">
 									<?php for ($i=0; $i<count($data['nomoi']); $i++) : ?>
-										<option value="<?=$data['nomoi'][$i]->Ονομασία_Νομού?>"><?=$data['nomoi'][$i]->Ονομασία_Νομού?></option>
+										<option value="<?=$data['nomoi'][$i]->onomasia_nomou?>"><?=$data['nomoi'][$i]->onomasia_nomou?></option>
 									<?php endfor;?>
 								</select>
 							</td>
@@ -18,7 +18,7 @@
 							<label for="search-fuel-type-dropdown">Είδος καυσίμου:</label>
 								<select name="search-fuel-type-dropdown" class="search-dropdown">
 									<?php for ($i=0; $i<count($data['kausima']); $i++) : ?>
-										<option value="<?=$data['kausima'][$i]->id_Καυσίμου?>"><?=$data['kausima'][$i]->Τύπος_Καυσίμου?></option>
+										<option value="<?=$data['kausima'][$i]->id_kausimou?>"><?=$data['kausima'][$i]->tipos_kausimou?></option>
 									<?php endfor;?>
 								</select>
 							</td>
