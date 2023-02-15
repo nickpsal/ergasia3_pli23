@@ -8,10 +8,10 @@
 					<ul>
 						<?php for ($i=0; $i<count($data['anakoinoseis']); $i++) : ?>
 							<li>
-								<h3 id="announcement1date"><?=$data['anakoinoseis'][$i]->Ημερομηνία_Καταχώρησης?></h3>
-								<h2 id="announcement1title"><?=$data['anakoinoseis'][$i]->Τίτλος_Ανακοίνωσης?></h2>
+								<h3 id="announcement1date"><?=$data['anakoinoseis'][$i]->data_anakoinosis?></h3>
+								<h2 id="announcement1title"><?=$data['anakoinoseis'][$i]->title_anakoinosis?></h2>
 								<p>
-									<?=$data['anakoinoseis'][$i]->Κείμενο_Ανακοίνωσης?>
+									<?=$data['anakoinoseis'][$i]->text_anakoinosis?>
 								</p>
 							</li>
 						<?php endfor;?>
