@@ -67,7 +67,7 @@
             return false;
         }
 
-        public function update_query($id, $data, $id_column = '') {
+        public function update_query($id, $data) {
             $id_column = $this->update_id;
             $keys = array_keys($data); 
             $query = "UPDATE $this->db_table SET ";
