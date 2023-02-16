@@ -2,6 +2,7 @@
     //required php files
     require "functions.php";
     require "config.php";
+    require "request.php";
     require "Database.php";
     require "Model.php";
     require "Controller.php";

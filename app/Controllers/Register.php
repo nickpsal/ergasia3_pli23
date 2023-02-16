@@ -1,5 +1,5 @@
 <?php
-    class Signup{
+    class Register{
         use Controller;
         public function index($data = []){
             $request = new Request();
@@ -16,7 +16,7 @@
                 $data['kausima'] = $k->find_all_data_from_db();
                 $d = new Dimos;
                 $data['dimos'] = $d->find_all_data_from_db();
-                $this->view('signup', $data); 
+                $this->view('register', $data); 
             }
         }
     }

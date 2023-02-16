@@ -18,6 +18,6 @@
             </div>
         </form>
 
-        <div id="signup-link"><a href="<?=URL?>signup">Εγγραφή νέας επιχείρησης</a></div>
+        <div id="signup-link"><a href="<?=URL?>register">Εγγραφή νέας επιχείρησης</a></div>
     </div>
 </section> <!-- here ends the section 'login-form' -->

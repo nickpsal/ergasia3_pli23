@@ -24,7 +24,7 @@
 		                <label for="signup-location-dropdown">Νομός:</label>
 		                <select name="Νομός_Χρήστη" class="signup-dropdown">
 							<?php for ($i=0; $i<count($data['nomoi']); $i++) : ?>
-								<option value="<?=$data['nomoi'][$i]->Ονομασία_Νομού?>"><?=$data['nomoi'][$i]->Ονομασία_Νομού?></option>
+								<option value="<?=$data['nomoi'][$i]->onomasia_nomou?>"><?=$data['nomoi'][$i]->onomasia_nomou?></option>
 							<?php endfor;?>		                   
 		                </select>
 		            </div>
@@ -32,7 +32,7 @@
 		                <label for="signup-municipality-dropdown">Δήμος:</label>
 		                <select name="Δήμος_Χρήστη" class="signup-dropdown">
 							<?php for ($i=0; $i<count($data['dimos']); $i++) : ?>
-								<option value="<?=$data['dimos'][$i]->Ονομασία_Δήμου?>"><?=$data['dimos'][$i]->Ονομασία_Δήμου?></option>
+								<option value="<?=$data['dimos'][$i]->name_dimos?>"><?=$data['dimos'][$i]->name_dimos?></option>
 							<?php endfor;?>
 		                </select>
 		            </div>
@@ -40,7 +40,7 @@
 		                <label for="signup-fuel-type-dropdown">Είδος καυσίμου:</label>
 		                <select name="Είδος_Καυσίμου" class="signup-dropdown">
 							<?php for ($i=0; $i<count($data['kausima']); $i++) : ?>
-								<option value="<?=$data['kausima'][$i]->Τύπος_Καυσίμου?>"><?=$data['kausima'][$i]->Τύπος_Καυσίμου?></option>
+								<option value="<?=$data['kausima'][$i]->tipos_kausimou?>"><?=$data['kausima'][$i]->tipos_kausimou?></option>
 							<?php endfor;?>
 		                </select>
 		            </div>
