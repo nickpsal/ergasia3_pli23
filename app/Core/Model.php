@@ -84,7 +84,8 @@
             return false;
         }
 
-        public function delete($id, $id_column = 'id') {
+        public function delete($id) {
+            $id_column = $this->update_id;
             $data[$id_column] = $id;
             $query = "DELETE FROM $this->db_table where $id_column = :$id_column";
             $this->query($query, $data);
