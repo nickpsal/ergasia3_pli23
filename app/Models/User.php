@@ -7,7 +7,7 @@
         protected $order_type = "desc";
         protected $limit = 100;
         protected $offset = 0;
-        protected $update_id = 'id_user';
+        protected $update_id = "id_user";
         //allowed columns of the db
         protected $allowedColumns = [
             'eponimia_user',
