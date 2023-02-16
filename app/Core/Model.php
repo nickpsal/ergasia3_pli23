@@ -3,12 +3,12 @@
         use Database;
         public $errors = [];
 
-        public function find_all() {
+        public function find_all_data_from_db() {
             $query = "SELECT * FROM $this->db_table ORDER BY $this->order_col $this->order_type limit $this->limit offset $this->offset";
             return $this->query($query);
         }
 
-        public function where($data, $data_not  =  []) {
+        public function where_query_db($data, $data_not  =  []) {
             $keys = array_keys($data); 
             $keys_not = array_keys($data_not);
             $query = "SELECT * FROM $this->db_table  where ";
@@ -24,7 +24,7 @@
             return $this->query($query,$data);
         }
 
-        public function first($data, $data_not  =  []) {
+        public function get_first_query_db($data, $data_not  =  []) {
             $keys = array_keys($data); 
             $keys_not = array_keys($data_not);
             $query = "SELECT * FROM $this->db_table  where ";
@@ -44,7 +44,7 @@
             return false;
         }
 
-        public function insert_query($data){
+        public function insert_data_to_db($data){
             if (!empty($this->allowedColumns)) {
                 foreach($data as $key=>$value) {
                     if (!in_array($key, $this->allowedColumns)) {
@@ -67,7 +67,7 @@
             return false;
         }
 
-        public function update_query($id, $data) {
+        public function update_data_to_db($id, $data) {
             $id_column = $this->update_id;
             $keys = array_keys($data); 
             $query = "UPDATE $this->db_table SET ";
@@ -84,7 +84,7 @@
             return false;
         }
 
-        public function delete($id) {
+        public function delete_data_from_db($id) {
             $id_column = $this->update_id;
             $data[$id_column] = $id;
             $query = "DELETE FROM $this->db_table where $id_column = :$id_column";
