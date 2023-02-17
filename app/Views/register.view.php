@@ -10,19 +10,19 @@
 					</div>
 		            <div>
 		                <label for="name">Επωνυμία επιχείρησης:</label>
-		                <input type="text" name="Επωνυμία_Χρήστη" required />
+		                <input type="text" name="eponimia_user" required />
 		            </div>
 		            <div>
 		                <label for="afm">ΑΦΜ:</label>
-		                <input type="number" name="Αφμ_Χρήστη" id="afm" required />
+		                <input type="number" name="afm_user" id="afm" required />
 		            </div>
 		            <div>
 		                <label for="address">Διεύθυνση:</label>
-		                <input type="text" name="Διεύθυνση_Χρήστη" required />
+		                <input type="text" name="address_user" required />
 		            </div>
 		            <div>
 		                <label for="signup-location-dropdown">Νομός:</label>
-		                <select name="Νομός_Χρήστη" class="signup-dropdown">
+		                <select name="dimos_user" class="signup-dropdown">
 							<?php for ($i=0; $i<count($data['nomoi']); $i++) : ?>
 								<option value="<?=$data['nomoi'][$i]->onomasia_nomou?>"><?=$data['nomoi'][$i]->onomasia_nomou?></option>
 							<?php endfor;?>		                   
@@ -30,7 +30,7 @@
 		            </div>
 		            <div>
 		                <label for="signup-municipality-dropdown">Δήμος:</label>
-		                <select name="Δήμος_Χρήστη" class="signup-dropdown">
+		                <select name="nomos_user" class="signup-dropdown">
 							<?php for ($i=0; $i<count($data['dimos']); $i++) : ?>
 								<option value="<?=$data['dimos'][$i]->name_dimos?>"><?=$data['dimos'][$i]->name_dimos?></option>
 							<?php endfor;?>
@@ -38,7 +38,7 @@
 		            </div>
 		            <div>
 		                <label for="signup-fuel-type-dropdown">Είδος καυσίμου:</label>
-		                <select name="Είδος_Καυσίμου" class="signup-dropdown">
+		                <select name="eidos_kausimou" class="signup-dropdown">
 							<?php for ($i=0; $i<count($data['kausima']); $i++) : ?>
 								<option value="<?=$data['kausima'][$i]->tipos_kausimou?>"><?=$data['kausima'][$i]->tipos_kausimou?></option>
 							<?php endfor;?>
@@ -46,15 +46,15 @@
 		            </div>
 		            <div>
 		                <label for="email">email:</label>
-		                <input type="email" name="Email_Χρήστη" required />
+		                <input type="email" name="email_user" required />
 		            </div>
 		            <div>
 		                <label for="username">Όνομα χρήστη:</label>
-		                <input type="text" name="Username_Χρήστη" required />
+		                <input type="text" name="username_user" required />
 		            </div>
 		            <div>
 		                <label for="password">Κωδικός:</label>
-		                <input type="password" id="password" name="Password_Χρήστη" required />
+		                <input type="password" id="password" name="password_user" required />
 		            </div>
 		            <div>
 		                <label for="confirm-password">Επιβεβαίωση κωδικού:</label>

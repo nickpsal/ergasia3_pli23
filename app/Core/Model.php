@@ -53,7 +53,7 @@
                 }
             }
             $data2['afm_user']  = $data['afm_user'];
-            $res = $this->first($data2);
+            $res = $this->get_first_query_db($data2);
             if (empty($res)) {
                 if ($this->db_table === 'user') {
                     $data['password_user'] = password_hash($data['password_user'],PASSWORD_DEFAULT);

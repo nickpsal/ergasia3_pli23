@@ -5,6 +5,9 @@
             $request = new Request();
             if ($request->is_post())  {
                 show($_POST);
+                $register = new User;
+                $register->insert_data_to_db($_POST);
+                redirect('login');
             }else if ($request->is_get()){
                 $data['title'] = 'Εγγραφή Νέου Χρήστη';
                 //get the menu items from database
