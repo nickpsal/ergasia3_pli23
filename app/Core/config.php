@@ -3,7 +3,7 @@
     define("APP_NAME", "Get-Gas");
     //define the desc of the app
     define("APP_DESC", "Get-Gas app");
-    //debug true of false
+    //debug true or false
     define("DEBUG", true);
     //checking of if it is localhost or live server
     if ($_SERVER['SERVER_NAME'] == '127.0.0.1' or  $_SERVER['SERVER_NAME'] == 'localhost') {

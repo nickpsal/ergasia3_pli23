@@ -42,7 +42,7 @@
                 redirect('home');
             }else {
                 $url = $_GET['url'];
-                $url = (explode('/', $url));
+                $url = (explode('/', trim($url, "/")));
                 return $url;
             }
         }

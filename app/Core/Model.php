@@ -45,6 +45,7 @@
         }
 
         public function insert_data_to_db($data){
+            //remove unwanted data
             if (!empty($this->allowedColumns)) {
                 foreach($data as $key=>$value) {
                     if (!in_array($key, $this->allowedColumns)) {
@@ -68,6 +69,14 @@
         }
 
         public function update_data_to_db($id, $data) {
+            //remove unwanted data
+            if (!empty($this->allowedColumns)) {
+                foreach($data as $key=>$value) {
+                    if (!in_array($key, $this->allowedColumns)) {
+                        unset($data[$key]);
+                    }
+                }
+            }
             $id_column = $this->update_id;
             $keys = array_keys($data); 
             $query = "UPDATE $this->db_table SET ";

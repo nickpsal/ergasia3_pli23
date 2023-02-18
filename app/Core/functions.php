@@ -27,18 +27,15 @@
     }
 
     //show message only once
-    function message(string $msg = null, bool $clear = false){
-        $ses = new Core\Session();
+    function message($msg = '',$erase = false){
         if(!empty($msg)){
-            $ses->set('message',$msg);
-        }else {
-            if(!empty($ses->get('message'))){
-                $msg = $ses->get('message');
-                if($clear){
-                $ses->pop('message');
-                }
-                return $msg;
+            $_SESSION['message'] = $msg;
+        }else if(!empty($_SESSION['message'])){
+            $msg = $_SESSION['message'];
+            if($erase){
+                unset($_SESSION['message']);
             }
+            return $msg;
         }
         return false;
     }
