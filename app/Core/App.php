@@ -22,7 +22,7 @@
             }else {
                 // require the 404 controller file if controller dont exists
                 $this->controller = "_404";
-                require "../app/Controllers/_404.php";
+                require_once "../app/Controllers/_404.php";
             }
             $controller = new $this->controller;
             if (isset($url[1])) {
@@ -42,8 +42,7 @@
                 redirect('home');
             }else {
                 $url = $_GET['url'];
-                $url = (explode('/', trim($url, "/")));
-                return $url;
+                return (explode('/', filter_var(trim($url, "/"), FILTER_SANITIZE_URL)));
             }
         }
     }

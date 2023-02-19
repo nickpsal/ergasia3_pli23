@@ -31,7 +31,12 @@
 							</nav>
 						</td>
 						<td>
-							<span id="login"><a class="button" href="<?=URL?>login">Login</a></span>
+							<?php if (!empty($_SESSION['user_data'])) : ?>
+								<span id="login"><a class="button" href="<?=URL?>logout">Logout</a></span>
+							<?php else :?>
+								<span id="login"><a class="button" href="<?=URL?>login">Login</a></span>
+							<?php endif ;?>
+							
 						</td>
 					</tr>
 				</tbody>

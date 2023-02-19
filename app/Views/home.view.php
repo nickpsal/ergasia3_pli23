@@ -1,6 +1,13 @@
 <!-- content -->
 <!-- daily prices -->
 <section id="index-daily-prices">
+    <div class="error">
+		<?php
+	    	if (message()) {
+		    	echo message('', true);
+		    }
+		?>
+	</div>
     <div class="container">
         <h1>Ημερήσια σύνοψη τιμών</h1>
         <h3><?=get_date()?></h3>

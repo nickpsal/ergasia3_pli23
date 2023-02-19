@@ -7,10 +7,6 @@
         echo "</pre>";
     }
 
-    function esc($str) {
-        return htmlspecialchars($str);
-    }
-
     //redirect function
     function redirect($page) {
         header("Location: " . URL . $page);

@@ -7,6 +7,11 @@
 					<div class="error">
 						<div id="errorafm"></div>
 						<div id="errorPassword"></div>
+						<?php
+							if (message()) {
+								echo message('', true);
+							}
+						?>
 					</div>
 		            <div>
 		                <label for="name">Επωνυμία επιχείρησης:</label>
