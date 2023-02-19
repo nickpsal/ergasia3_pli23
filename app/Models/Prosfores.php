@@ -5,7 +5,7 @@
         protected $db_table = 'prosfores';
         protected $order_col = "id_prosforas";
         protected $order_type = "desc";
-        protected $limit = 3;
+        protected $limit = 100;
         protected $offset = 0;
         protected $update_id = 'id_prosforas';
         //allowed columns of the db
