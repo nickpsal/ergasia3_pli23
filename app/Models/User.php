@@ -21,4 +21,13 @@
             'username_user',
             'password_user'
         ];
+
+        public function validate_register() {
+            $data['afm_user'] = $_POST['afm_user'];
+            $res = $this->get_first_query_db($data);
+            if (!empty($res)) {
+                return false;
+            }
+            return true;
+        }
     }

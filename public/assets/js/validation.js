@@ -20,6 +20,16 @@ form.addEventListener("submit", function (event) {
         confirmpasswordfield.style.backgroundColor = "red";
         errorPassword.textContent="Τα πεδίο Κωδικος και Επιβεβαίωση Κωδικου δεν ταιριάζουν";
         event.preventDefault();
+    } else {
+        passwordfield.style.backgroundColor = "white";
+        confirmpasswordfield.style.backgroundColor = "white";
+        errorPassword.textContent="";
+    }
+    if (password.length <8) {
+        passwordfield.style.backgroundColor = "red";
+        confirmpasswordfield.style.backgroundColor = "red";
+        errorPassword.textContent="Τα πεδίο Κωδικος πρέπει να έχει πάνω απο 8 χαρακτήρες μήκος";
+        event.preventDefault();
     }else {
         passwordfield.style.backgroundColor = "white";
         confirmpasswordfield.style.backgroundColor = "white";

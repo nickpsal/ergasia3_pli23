@@ -372,7 +372,7 @@ input[type="number"] {
 /* signup form */
 .error{
 	display: inline-block;
-	width: 150px;
+	width: 640px;
 	background-color: gray;
 	color: white;
 	margin: 0px 0px 4px 20px;

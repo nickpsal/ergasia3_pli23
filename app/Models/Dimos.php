@@ -3,7 +3,7 @@
         use Model;
         //protected variable declare which db table to use in this model
         protected $db_table = 'dimos';
-        protected $order_col = "id_kentrou";
+        protected $order_col = "name_dimos";
         protected $order_type = "asc";
         protected $limit = 100;
         protected $offset = 0;
