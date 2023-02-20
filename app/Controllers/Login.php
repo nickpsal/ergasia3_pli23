@@ -25,7 +25,12 @@
                     redirect('register');
                 }
             }else if ($request->is_get()) {
-                $this->view('login', $data); 
+                if (empty($_SESSION['user_data'])) {
+                    $this->view('login', $data); 
+                }else {
+                    message("Είστε ήδη συνδεμένοι");
+                    redirect('home');
+                }
             }
         }
     }
