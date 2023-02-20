@@ -28,10 +28,4 @@
                 $this->view('login', $data); 
             }
         }
-
-        public function logout($data = []) {
-            if (!empty($_SESSION['user_data'])) {
-                unset($_SESSION['user_data']);
-            }
-        }
     }
