@@ -10,7 +10,7 @@
 		    ?>
 	    </div>
         <h1>Ημερήσια σύνοψη τιμών</h1>
-        <h3><?=get_date()?></h3>
+        <h3><?=get_day_and_date()?></h3>
         <ul>
             <?php for ($i=0; $i<count($data['kausimo']); $i++) : ?>
 				<li>

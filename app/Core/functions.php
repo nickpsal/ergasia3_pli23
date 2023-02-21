@@ -62,9 +62,13 @@
 
     /** get current day and current date 
      * Translates the name of the day from english to greek **/
-    function get_date(){
+    function get_day_and_date(){
         $english_days = array('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday');
         $greek_days = array('Κυριακή', 'Δευτέρα', 'Τρίτη', 'Τεττάρτη', 'Πέμπτη', 'Παρασκευή', 'Σάββατο');
         $current_day = str_replace($english_days, $greek_days, date('l'));
         return $current_day . ", " . date("d/m/Y");
+    }
+
+    function get_date() {
+        return date("d/m/Y");
     }
