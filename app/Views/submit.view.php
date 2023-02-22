@@ -25,13 +25,13 @@
 					<div>
 						<label for="submit-municipality-dropdown">Δήμος:</label>
 						<select name="dimos_user" class="submit-dropdown">
-							<option value="<?=$_SESSION['user_data']->dimos_user?>"><?=$_SESSION['user_data']->dimos_user?></option>
+							<option value="<?=$_SESSION['user_data']->dimos_user?>"><?=$data['dimos']?></option>
 						</select>
 					</div>
 					<div>
 						<label for="submit-fuel-type-dropdown">Είδος καυσίμου:</label>
 						<select name="id_kausimou" class="submit-dropdown">
-							<option value="<?=$_SESSION['user_data']->eidos_kausimou?>"><?=$_SESSION['user_data']->eidos_kausimou?></option>
+							<option value="<?=$_SESSION['user_data']->eidos_kausimou?>"><?=$data['kausimo']?></option>
 						</select>
 					</div>
 					<div>
