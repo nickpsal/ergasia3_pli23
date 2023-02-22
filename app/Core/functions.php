@@ -70,5 +70,5 @@
     }
 
     function get_date() {
-        return date("d/m/Y");
+        return date("Y/m/d");
     }

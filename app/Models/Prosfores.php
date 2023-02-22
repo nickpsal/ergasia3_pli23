@@ -13,6 +13,7 @@
             'id_user',
             'id_kausimou',
             'ending_date_prosforas',
+            'date_prosforas',
             'price_prosforas'
         ];
     }

@@ -18,7 +18,7 @@
                 //remove the controller from array
                 unset($url[0]); 
                 // require controller file
-                require $filename;
+                require_once $filename;
             }else {
                 // require the 404 controller file if controller dont exists
                 $this->controller = "_404";

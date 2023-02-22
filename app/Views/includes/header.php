@@ -32,7 +32,7 @@
 						</td>
 						<td>
 							<?php if (!empty($_SESSION['user_data'])) : ?>
-								<span id="login"><a class="button" href="<?=URL?>logout">Logout</a></span>
+								<span id="logout"><a class="button" href="<?=URL?>logout">Logout</a></span>
 							<?php else :?>
 								<span id="login"><a class="button" href="<?=URL?>login">Login</a></span>
 							<?php endif ;?>

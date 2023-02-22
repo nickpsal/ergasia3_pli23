@@ -10,15 +10,15 @@
             $footer = "../app/Views/includes/footer.php";
             //check if header file exists and loaded it
             if (file_exists($header)) {
-                require $header;
+                require_once $header;
             }else {
                 echo "dont found";
             }
             //check if view exists and loaded it else loads the 404 view
             if (file_exists($filename)){
-                require $filename;
+                require_once $filename;
             }else {
-                require "../app/Views/404.view.php";
+                require_once "../app/Views/404.view.php";
             }
             //check if the footer file exists
             if (file_exists($footer)) {
