@@ -13,6 +13,7 @@
                 $res = $user->get_first_query_db($data2);
                 if (!empty($res)) {
                     if ($request->get_value_post('username_user') === $res->username_user && password_verify($request->get_value_post('password_user'), $res->password_user)) {
+                        unset($res->password_user);
                         $_SESSION['user_data'] = $res;
                         message('Εχετε συνδεθεί με επιτυχία! ' . $_SESSION['user_data']->username_user);
                         redirect('home');
