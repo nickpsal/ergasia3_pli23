@@ -72,3 +72,9 @@
     function get_date() {
         return date("Y/m/d");
     }
+
+    function generate_google_maps_link($address) {
+        $utf8_address = mb_convert_encoding($address, 'UTF-8', 'auto');
+        $google_maps_link = "https://www.google.com/maps?q=" . urlencode($utf8_address);
+        return $google_maps_link;
+    }
