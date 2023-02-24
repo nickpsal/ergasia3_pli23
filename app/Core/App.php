@@ -22,7 +22,7 @@
             }else {
                 // require the 404 controller file if controller dont exists
                 $this->controller = "_404";
-                require_once "../app/Controllers/_404.php";
+                require "../app/Controllers/_404.php";
             }
             $controller = new $this->controller;
             if (isset($url[1])) {

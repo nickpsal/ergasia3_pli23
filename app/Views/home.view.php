@@ -15,7 +15,7 @@
             <?php for ($i=0; $i<count($data['kausimo']); $i++) : ?>
 				<li>
 					<h2><?=$data['kausimo'][$i]->tipos_kausimou?></h2>
-                    <p id="price-gas95">Μέγιστη: 2.11 / Ελάχιστη: 1.89 / Μέση: 2.03</p>
+                    <p id="price-gas95">Μέγιστη: <?=$data['nin_max'][$i]->max_price?> / Ελάχιστη: <?=$data['nin_max'][$i]->min_price?> / Μέση: <?=number_format($data['avg'][$i]->avg, 2)?></p>
 				</li>
 			<?php endfor;?>
 		</ul>

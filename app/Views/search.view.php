@@ -2,6 +2,13 @@
 		<!-- search filters -->
 		<section id="search-filters">
 			<div class="container">
+				<div class="error">
+					<?php
+						if (message()) {
+							echo message('', true);
+						}
+					?>
+	    		</div>
 				<h1>Φίλτρα</h1>
 				<table id="search-filters-table">
 					<tbody>

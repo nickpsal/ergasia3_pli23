@@ -44,7 +44,7 @@
             return false;
         }
         
-        function join_tables_from_db($columns, $field, $table, $data) {
+        public function join_tables_from_db($columns, $field, $table, $data) {
             $keys = array_keys($data); 
             $query = "SELECT " . implode(", ", $columns) . " FROM $this->db_table ";
             $query .= "JOIN $table ON $this->db_table.$field = $table.$field WHERE ";
@@ -52,6 +52,16 @@
                 $query .= $this->db_table. "." . $key . "=:" . $key;
             }
             return $this->query($query, $data);
+        }
+
+        public function get_min_and_max_from_db($item) {
+            $query = "SELECT $item, MIN(price_prosforas) as min_price, MAX(price_prosforas) as max_price FROM $this->db_table GROUP BY $item";
+            return $this->query($query);
+        }
+
+        public function get_avg_from_db($item) {
+            $query = "SELECT $item, AVG(price_prosforas) as avg FROM $this->db_table GROUP BY $item";
+            return $this->query($query);
         }
 
         public function insert_data_to_db($data){

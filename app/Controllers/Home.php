@@ -9,11 +9,10 @@
             $kausimo = new Kausimo;
             $data['kausimo'] = $kausimo->find_all_data_from_db();
             $prosfores = new prosfores;
-            $prosfores_data = $prosfores->find_all_data_from_db();
-            //for ($i=0; $i<count($data['kausimo']); $i++) {
-            //    echo $data['kausimo'][$i]->tipos_kausimou;
-            //    echo "</br>";
-            //}
+            $avg = $prosfores->get_avg_from_db('id_kausimou');
+            $min_max = $prosfores->get_min_and_max_from_db('id_kausimou');
+            $data['avg'] = $avg;
+            $data['nin_max'] = $min_max;
             $a = new Anakoinoseis;
             $data['anakoinoseis'] = $a->find_all_data_from_db();
             $this->view('home', $data); 
