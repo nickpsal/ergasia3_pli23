@@ -19,15 +19,15 @@
                     $data_to_insert['date_prosforas'] = get_date();
                     $prosfores->insert_data_to_db($data_to_insert);
                     message('Η Προσφορά καταχωρήθηκε με επιτυχία');
-                    redirect('home');
+                    redirect('search');
                 }else if ($prosfores_data->price_prosforas > $_POST['price_prosforas']) {
                     $updated_data['price_prosforas'] = $_POST['price_prosforas'];
                     $prosfores->update_data_to_db($prosfores_data->id_prosforas, $updated_data);
                     message('Υπήρχε ήδη προσφορά καταχωρημένη αλλα με μεγαλύτερη τιμή. Καναμε αντικαταστάση της Παλιάς με την Νέα τιμή');
-                    redirect('home');
+                    redirect('search');
                 }else {
                     message('Η εταιρία έχει ήδη Καταχωρημένη Προσφορά');
-                    redirect('home');
+                    redirect('search');
                 }
             } else if ($request->is_get()) {
                 if (!empty($_SESSION['user_data'] && $_SESSION['user_data']->role_user === '2')){

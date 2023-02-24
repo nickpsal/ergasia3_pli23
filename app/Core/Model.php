@@ -43,6 +43,16 @@
             }
             return false;
         }
+        
+        function join_tables_from_db($columns, $field, $table, $data) {
+            $keys = array_keys($data); 
+            $query = "SELECT " . implode(", ", $columns) . " FROM $this->db_table ";
+            $query .= "JOIN $table ON $this->db_table.$field = $table.$field WHERE ";
+            foreach($keys as $key){
+                $query .= $this->db_table. "." . $key . "=:" . $key;
+            }
+            return $this->query($query, $data);
+        }
 
         public function insert_data_to_db($data){
             //remove unwanted data
