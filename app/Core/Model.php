@@ -54,13 +54,13 @@
             return $this->query($query, $data);
         }
 
-        public function get_min_and_max_from_db($item) {
-            $query = "SELECT $item, MIN(price_prosforas) as min_price, MAX(price_prosforas) as max_price FROM $this->db_table GROUP BY $item";
+        public function get_min_and_max_from_db($item_table, $item) {
+            $query = "SELECT $item_table, MIN($item) as min_price, MAX($item) as max_price FROM $this->db_table GROUP BY $item_table";
             return $this->query($query);
         }
 
-        public function get_avg_from_db($item) {
-            $query = "SELECT $item, AVG(price_prosforas) as avg FROM $this->db_table GROUP BY $item";
+        public function get_avg_from_db($item_table, $item) {
+            $query = "SELECT $item_table, AVG($item) as avg FROM $this->db_table GROUP BY $item_table";
             return $this->query($query);
         }
 
