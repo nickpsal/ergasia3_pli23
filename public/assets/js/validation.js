@@ -35,4 +35,15 @@ form.addEventListener("submit", function (event) {
         confirmpasswordfield.style.backgroundColor = "white";
         errorPassword.textContent="";
     }
+    const passwordRegex = /^(?=.*\d)(?=.*[A-Z])[a-zA-Z0-9]{8,}$/;
+    if (passwordRegex.test(password)) {
+        passwordfield.style.backgroundColor = "white";
+        confirmpasswordfield.style.backgroundColor = "white";
+        errorPassword.textContent="";
+    }else {
+        passwordfield.style.backgroundColor = "red";
+        confirmpasswordfield.style.backgroundColor = "red";
+        errorPassword.textContent="Τα πεδίο Κωδικος πρέπει να περιέχει τουλάχιστον 1 Κεφαλαίο γράμμα και τουλάχιστον 1 Νούμερο";
+        event.preventDefault();
+    }
 });

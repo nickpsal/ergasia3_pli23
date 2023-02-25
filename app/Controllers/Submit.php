@@ -22,8 +22,10 @@
                     redirect('search');
                 }else if ($prosfores_data->price_prosforas > $_POST['price_prosforas']) {
                     $updated_data['price_prosforas'] = $_POST['price_prosforas'];
+                    $updated_data['ending_date_prosforas'] = $_POST['ending_date_prosforas'];
                     $prosfores->update_data_to_db($prosfores_data->id_prosforas, $updated_data);
-                    message('Υπήρχε ήδη προσφορά καταχωρημένη αλλα με μεγαλύτερη τιμή. Καναμε αντικαταστάση της Παλιάς με την Νέα τιμή');
+                    message('Υπήρχε ήδη προσφορά καταχωρημένη αλλα με μεγαλύτερη τιμή. Καναμε αντικαταστάση της Παλιάς 
+                    με την Νέα τιμή και αλλάξαμε και την ημερομηνια');
                     redirect('search');
                 }else {
                     message('Η εταιρία έχει ήδη Καταχωρημένη Προσφορά');
