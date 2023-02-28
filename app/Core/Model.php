@@ -8,6 +8,11 @@
             return $this->query($query);
         }
 
+        public function find_all_prosfores_from_db() {
+            $query = "SELECT * FROM $this->db_table WHERE ending_date_prosforas >= CURDATE() ORDER BY $this->order_col $this->order_type limit $this->limit offset $this->offset";
+            return $this->query($query);
+        }
+
         public function where_query_db($data, $data_not  =  []) {
             $keys = array_keys($data); 
             $keys_not = array_keys($data_not);

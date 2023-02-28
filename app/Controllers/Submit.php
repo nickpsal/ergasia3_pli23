@@ -11,7 +11,7 @@
                 $prosfores = new Prosfores;
                 $search_query['id_user'] = $_SESSION['user_data']->id_user;
                 $prosfores_data = $prosfores->get_first_query_db($search_query);
-                if (empty($prosfores_data)) {
+                if (empty($prosfores_data) || $prosfores_data->ending_date_prosforas < get_date()) {
                     $data_to_insert = $_POST;
                     $user = new User;
                     $user_data = $user->get_first_query_db($search_query);
