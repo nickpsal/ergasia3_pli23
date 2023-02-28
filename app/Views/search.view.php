@@ -61,9 +61,7 @@
 									for ($k=0; $k<count($data['avg']); $k++) {
 										if ($data['prosfores'][$i]->id_prosforas  === $data['avg'][$k]) :?>
 											<tr class="avg_min">
-											<?php 
-												break;
-											?>
+											<?php break;?>
 										<?php else :?>
 											<tr>
 										<?php endif;?> 
