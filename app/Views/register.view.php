@@ -3,7 +3,7 @@
 		<section id="signup-form" class="last-section-before-footer">
 		    <div class="container">
 		        <h1>Εγγραφή επιχείρησης</h1>
-		        <form accept-charset="UTF-8" action="" autocomplete="on" method="POST">
+		        <form accept-charset="UTF-8" id="register_form" action="" autocomplete="on" method="POST">
 					<div class="error">
 						<div id="errorafm"></div>
 						<div id="errorPassword"></div>

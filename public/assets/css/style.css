@@ -219,6 +219,11 @@ body{
 	width: auto;
 }
 
+.table-container {
+	height: 300px;
+  	overflow: auto;
+}
+
 /* search results table */
 table.minimalistBlack {
   border: 2px solid #404040;
@@ -252,8 +257,6 @@ table.minimalistBlack thead th {
 	color: #404040;
 	padding: 1px 0px 2px 0px;
 }
-
-
 
 /***** submit.html *****/
 /* submit form */

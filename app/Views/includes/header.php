@@ -36,7 +36,6 @@
 							<?php else :?>
 								<span id="login"><a class="button" href="<?=URL?>login">Login</a></span>
 							<?php endif ;?>
-							
 						</td>
 					</tr>
 				</tbody>

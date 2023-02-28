@@ -3,7 +3,7 @@
 		<section id="submit-form" class="last-section-before-footer">
 			<div class="container">
 				<h1>Καταχώρηση προσφοράς</h1>
-				<form accept-charset="UTF-8" action="" autocomplete="on" method="POST">
+				<form accept-charset="UTF-8" id="submit_form" action="" autocomplete="on" method="POST">
 					<div>
 						<label for="name">Επωνυμία επιχείρησης:</label>
 						<input type="text" name="eponimia_user" value="<?=$_SESSION['user_data']->eponimia_user?>" readonly />

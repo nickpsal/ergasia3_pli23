@@ -1,4 +1,4 @@
-<script src="<?=ROOT?>/assets/js/validation.js"></script>
+<script src="<?=ROOT?>/assets/js/scripts.js"></script>
 <!-- footer - terms of use, privacy policy -->
 <footer id="main-footer">
 			<table>

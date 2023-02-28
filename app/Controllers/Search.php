@@ -14,7 +14,8 @@
             $prosfores_get_data = $prosfores->find_all_data_from_db();
             $columns = [
                 'eponimia_user',
-                'address_user'
+                'address_user',
+                'nomos_user'
             ];
             $user_data = Array();
             for ($i=0; $i<count($prosfores_get_data); $i++) {
