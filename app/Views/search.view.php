@@ -57,18 +57,29 @@
 						<tbody>
 							<?php for ($i=0; $i<count($data['prosfores']); $i++) :?>
 								<?php $count = $i + 1?>
-								<tr>
-									<td><?=$count?></td>
-									<td><?=$data['user_data'][$i][0]->eponimia_user?></td>
-									<td><a href="<?=generate_google_maps_link($data['user_data'][$i][0]->address_user)?>" target="_blank"><?=$data['user_data'][$i][0]->address_user . " , " . $data['user_data'][$i][0]->nomos_user?></a></td>
-									<?php
-										for ($j=0; $j<count($data['kausima']); $j++) {
-											if ($data['kausima'][$j]->id_kausimou === $data['prosfores'][$i]->id_kausimou) :?>
-												<td><?=$data['kausima'][$j]->tipos_kausimou?></td>
-											<?php endif;?> <?php
-										}
-									?>
-									<td><?=$data['prosfores'][$i]->price_prosforas?></td>
+								<?php 
+									for ($k=0; $k<count($data['avg']); $k++) {
+										if ($data['prosfores'][$i]->id_prosforas  === $data['avg'][$k]) :?>
+											<tr class="avg_min">
+											<?php 
+												break;
+											?>
+										<?php else :?>
+											<tr>
+										<?php endif;?> 
+									<?php }
+								?>
+								<td><?=$count?></td>
+								<td><?=$data['user_data'][$i][0]->eponimia_user?></td>
+								<td><a href="<?=generate_google_maps_link($data['user_data'][$i][0]->address_user)?>" target="_blank"><?=$data['user_data'][$i][0]->address_user . " , " . $data['user_data'][$i][0]->nomos_user?></a></td>
+								<?php
+									for ($j=0; $j<count($data['kausima']); $j++) {
+										if ($data['kausima'][$j]->id_kausimou === $data['prosfores'][$i]->id_kausimou) :?>
+											<td><?=$data['kausima'][$j]->tipos_kausimou?></td>
+										<?php endif;?> <?php
+									}
+								?>
+								<td><?=$data['prosfores'][$i]->price_prosforas?></td>
 								</tr>
 							<?php endfor;?>
 						</tbody>

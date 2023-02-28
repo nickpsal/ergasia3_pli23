@@ -200,6 +200,15 @@ body{
 	margin-bottom: 30px;
 }
 
+.avg_min {
+	background-color: green;
+	color: white;
+}
+
+.avg_min a {
+	color:white;
+}
+
 /* 1st table cell - location */
 #search-filters-table tbody td:nth-child(1){
 	text-align: left;
