@@ -21,14 +21,18 @@
                     if ($avg[$i]->id_kausimou == $prosfores_get_data[$j]->id_kausimou) {
                         $dif = $avg[$i]->avg - $prosfores_get_data[$j]->price_prosforas;
                         if ($dif < $min_dif) {
-                            $min_dif = $dif;
-                            $min_dif_id = $prosfores_get_data[$j]->id_prosforas;
+                            //$min_dif = $dif;
+                            $min_dif_id = $j;
                         }
                     }
                 }
-                array_push($avg_dif, $min_dif_id);
+                $prosfores_get_data[$min_dif_id]->min = true;
             }
-            $data['avg'] = $avg_dif;           
+            for ($i=0; $i<count($prosfores_get_data); $i++) {
+                if (empty($prosfores_get_data[$i]->min)) {
+                    $prosfores_get_data[$i]->min = false;
+                }
+            }
             $columns = [
                 'eponimia_user',
                 'address_user',

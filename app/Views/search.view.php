@@ -57,7 +57,13 @@
 						<tbody>
 							<?php for ($i=0; $i<count($data['prosfores']); $i++) :?>
 								<?php $count = $i + 1?>
-								<tr>
+								<?php
+									if ($data['prosfores'][$i]->min === true) {
+										echo "<tr class='avg_min'>";
+									}else {
+										echo "<tr>";
+									}
+								?>
 									<td><?=$count?></td>
 									<td><?=$data['user_data'][$i][0]->eponimia_user?></td>
 									<td><a href="<?=generate_google_maps_link($data['user_data'][$i][0]->address_user)?>" target="_blank"><?=$data['user_data'][$i][0]->address_user . " , " . $data['user_data'][$i][0]->nomos_user?></a></td>
