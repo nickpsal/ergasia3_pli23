@@ -16,7 +16,6 @@
                     $user = new User;
                     $user_data = $user->get_first_query_db($search_query);
                     $data_to_insert['id_user'] = $user_data->id_user;
-                    $data_to_insert['date_prosforas'] = get_date();
                     $prosfores->insert_data_to_db($data_to_insert);
                     message('Η Προσφορά καταχωρήθηκε με επιτυχία');
                     redirect('search');

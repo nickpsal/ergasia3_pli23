@@ -82,9 +82,6 @@
                 $data['password_user'] = password_hash($data['password_user'],PASSWORD_DEFAULT);
                 $data['role_user'] = 1;
             }
-            if ($this->db_table === 'prosfores') {
-                $data['date_prosforas'] = get_date();
-            }
             $keys = array_keys($data);
             $query = "insert into $this->db_table (".implode(",", $keys).") values (:".implode(",:", $keys).")";
             $this->query($query, $data);
