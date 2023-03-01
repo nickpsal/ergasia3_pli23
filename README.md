@@ -21,7 +21,8 @@
       define('DB_NAME', 'psaltakis_nikolaos_ge3_db');
 
       (το οποίο πρέπει να είναι σε μη προσβασιμο απο το WEB φάκελο)
-      Αν το root path για το αρχειο που διαβαζετε ειναι C:\wamp64\folder το config.php θα πρέπει να είναι C:\wamp64\folder\app\core\config.php
+      Αν το root path για το αρχειο που διαβαζετε ειναι C:\wamp64\folder το config.php θα πρέπει να είναι 
+      C:\wamp64\folder\app\core\config.php
 
 
   1.2 Εισαγωγή ΔΕδομένων
@@ -30,7 +31,8 @@
       επιλέγοντας το αρχείο ./public/psaltakis_nikolaos_ge3_db
 
 
-# 2.Στοιχεία Λογαριασμών Χρηστών (Dummy) για είσοδο χρησιμοποιούμε τα username και password που αναφέρονται παρακάτω.
+# 2.Στοιχεία Λογαριασμών Χρηστών (Dummy) για είσοδο χρησιμοποιούμε τα username και password 
+που αναφέρονται παρακάτω.
 
 Διαχειρηστής
 username: std0δ80926
