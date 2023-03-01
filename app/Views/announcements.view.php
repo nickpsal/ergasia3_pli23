@@ -24,7 +24,7 @@
 								</div>
 							<?php endif;?>
 							<li>
-								<h3 id="announcement1date"><?=$data['anakoinoseis'][$i]->date_anakoinosis?></h3>
+								<h3 id="<?=$data['anakoinoseis'][$i]->date_anakoinosis?>"><?=$data['anakoinoseis'][$i]->date_anakoinosis?></h3>
 								<h2 id="announcement1title"><?=$data['anakoinoseis'][$i]->title_anakoinosis?></h2>
 								<p>
 									<?=$data['anakoinoseis'][$i]->text_anakoinosis?>
