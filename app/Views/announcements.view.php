@@ -2,6 +2,13 @@
 		<!-- announcements -->
 		<section id="announcements" class="last-section-before-footer">
 			<div class="container">
+				<div class="error">
+					<?php
+						if (message()) {
+							echo message('', true);
+						}
+					?>
+	    		</div>
 				<?php if (!empty($_SESSION['user_data']) && $_SESSION['user_data']->role_user === '2') :?>
 					<div class="add-button">
 						<button class="button" onclick="openFormWindow()">Προσθήκη Ανακοίνωσης</button>
@@ -13,7 +20,7 @@
 						<?php for ($i=0; $i<count($data['anakoinoseis']); $i++) : ?>
 							<?php if (!empty($_SESSION['user_data']) && $_SESSION['user_data']->role_user === '2') :?>
 								<div class="del-button">
-									<button class="button" onclick="">Διαγραφή</button>
+									<a class="button" href="<?=URL?>announcements/delann/<?=$data['anakoinoseis'][$i]->id_anakoinosis?>">Διαγραφή</a>
 								</div>
 							<?php endif;?>
 							<li>

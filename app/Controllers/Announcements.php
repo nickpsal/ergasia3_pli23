@@ -38,6 +38,24 @@
                 redirect('announcements/complete_success');
             }
         }
+        
+        public function delann($data = []) {
+            $request = new Request;
+            if ($request->is_get()) {
+                if (empty($_SESSION['user_data'])) {
+                    message("Πρέπει να συνδεθείτε σαν διαχειρηστής για να Διαγράψετε κάποια Ανακοίνωση");
+                    redirect('home');
+                }else if (!empty($_SESSION['user_data']) && $_SESSION['user_data']->role_user === '2') {
+                    $a = new Anakoinoseis;
+                    $a->delete_data_from_db($data[2]);
+                    message("Η Ανακοίνωση με ID = $data[2] διαγράφτηκε με Επιτυχία");
+                    redirect('announcements');
+                }else if (!empty($_SESSION['user_data']) && $_SESSION['user_data']->role_user === '1') {
+                    message("Δεν έχετε δικαιώματα να Διαγράψετε κάποια Ανακοίνωση. Παρακαλώ επικοινωνήστε με τον διαχειρηστή <a href='mailto:std080926@ac.eap.gr'>Send Email</a>");
+                    redirect('home');
+                }
+            }
+        }
 
         public function complete_success($data = []){
             $request = new Request;
