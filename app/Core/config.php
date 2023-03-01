@@ -8,14 +8,15 @@
     //checking of if it is localhost or live server
     if ($_SERVER['SERVER_NAME'] == '127.0.0.1' or  $_SERVER['SERVER_NAME'] == 'localhost') {
         //localhost
-        //gettinng current url with $_SERVER super global
-        $current_url = "http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
-        //break the url in array by / symbol
-        $parts = explode('/', $current_url);
-        //asembly the current url
-        $abs_path = implode('/', array_slice($parts, 0, count($parts) - 1));
-        define('ROOT', $abs_path . "/public");
-        define('URL', $abs_path . "/");
+        $host = $_SERVER['HTTP_HOST'];
+        $folder = trim(dirname($_SERVER['PHP_SELF']), '/\\');
+        $base_url = "http://$host/$folder";
+        $parts = explode('/', $base_url);
+        $path = implode('/', array_slice($parts, 0, count($parts) - 1));
+        define('ROOT', $path . "/public");
+        define('URL', $path . "/");
+        //define('ROOT', "http://127.0.0.1/psaltakis_nikolaos_ge3_pli23/public");
+        //define('URL', "http://127.0.0.1/psaltakis_nikolaos_ge3_pli23/");
         define('DB_HOST', 'localhost');
         define('DB_USER', 'root');
         define('DB_PASS', 'toor');

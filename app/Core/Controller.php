@@ -27,4 +27,15 @@
                 echo "dont found";
             }
         }
+
+        public function view_with_out_header_footer($view, $data = []){
+            //view filename
+            $filename = "../app/Views/" . $view . ".view.php";
+            //check if view exists and loaded it else loads the 404 view
+            if (file_exists($filename)){
+                require $filename;
+            }else {
+                require "../app/Views/404.view.php";
+            }
+        }
     }

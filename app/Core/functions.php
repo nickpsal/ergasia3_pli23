@@ -9,7 +9,7 @@
 
     //redirect function
     function redirect($page) {
-        header("Location: " . URL . $page);
+        header("Location: " . URL . $page . '/');
         die();
     }
 

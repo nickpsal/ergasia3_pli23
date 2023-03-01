@@ -1,3 +1,4 @@
+var popup = null;
 const form = document.getElementById("register_form");
 if (form != null) {
     form.addEventListener("submit", (event) => {
@@ -49,6 +50,15 @@ if (form != null) {
     });
 }
 
+function openFormWindow() {
+    var width = 640;
+    var height = 600;
+    var left = (screen.width - width) / 2;
+    var top = (screen.height - height) / 2;
+    popup = window.open("announcements/addnew", "Προσθήκη Νέας Ανακοίνωσης", "width=" + width + ", height=" + height + ", top=" + top + ", left=" + left );
+}
+
+
 function filterTable() {
     var dropdown1 = document.getElementById("filterDropdown1");
     var filter1 = dropdown1.value;
@@ -76,4 +86,8 @@ function filterTable() {
             rows[i].style.display = "none";
         }
     }
+}
+
+function closeFormWindow() {
+    window.close();
 }

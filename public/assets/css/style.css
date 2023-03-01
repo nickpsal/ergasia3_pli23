@@ -324,6 +324,19 @@ input[type="number"] {
 	box-sizing: border-box;
 }
 
+.add-button {
+	float: right;
+}
+
+.del-button {
+	width: 130px;
+	float: right;
+}
+
+textarea {
+	margin-left: 20px;
+}
+
 /* announcements dates */
 #announcements-list ul li h3{
 	margin: 0px;
