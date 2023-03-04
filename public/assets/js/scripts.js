@@ -1,49 +1,78 @@
 var popup = null;
+//δηλώνουμε μια σταθερά με το όνομα form που αναφέρεται σε ένα στοιχείο register_form με
+//την χρήση της μεθόδου getElementById
 const form = document.getElementById("register_form");
 if (form != null) {
+    // ελέγχουμε αν πατήθηκε το κουμπι submit
     form.addEventListener("submit", (event) => {
+        //δηλώνουμε μια σταθερά με το όνομα afmfield που αναφέρεται σε ένα στοιχείο afm με
+        //την χρήση της μεθόδου getElementById
         var afmfield = document.getElementById("afm");
+        //παίρνουμε την τιμή της afmfield
         var afm = afmfield.value;
+        //δηλώνουμε μια σταθερά με το όνομα passwordfield που αναφέρεται σε ένα στοιχείο password με
+        //την χρήση της μεθόδου getElementById
         var passwordfield = document.getElementById("password");
+        //παίρνουμε την τιμή της password
         var password = passwordfield.value;
+        //δηλώνουμε μια σταθερά με το όνομα confirmpasswordfield που αναφέρεται σε ένα στοιχείο passwordconfirm με
+        //την χρήση της μεθόδου getElementById
         var confirmpasswordfield = document.getElementById("passwordconfirm");
+        //παίρνουμε την τιμή της confirmpasswordfield
         var passwordconfirm = confirmpasswordfield.value;
+        //Έλεγχος αν το μηκος του πεδικου ΑΦΜ είναι 9
         if (afm.length !== 9) {
+            //αλλάζουμε το χρώμα του background του πεδιου
             afmfield.style.backgroundColor = "red";
+            //εμφάνηση μηνύματος αφάλματος
             errorafm.textContent = "Το ΑΦΜ πρέπει να έχει 9 Αριθμούς";
             event.preventDefault();
         } else {
+            //αλλάζουμε το χρώμα του background του πεδιου
             afmfield.style.backgroundColor = "white";
+            //καθαρισμός μηνύματος αφάλματος
             errorafm.textContent = "";
         }
         if (password !== passwordconfirm) {
+            //αλλάζουμε το χρώμα του background του πεδιου
             passwordfield.style.backgroundColor = "red";
             confirmpasswordfield.style.backgroundColor = "red";
+            //εμφάνηση μηνύματος αφάλματος
             errorPassword.textContent="Τα πεδίο Κωδικος και Επιβεβαίωση Κωδικου δεν ταιριάζουν";
             event.preventDefault();
         } else {
+            //αλλάζουμε το χρώμα του background του πεδιου
             passwordfield.style.backgroundColor = "white";
             confirmpasswordfield.style.backgroundColor = "white";
+            //καθαρισμός μηνύματος αφάλματος
             errorPassword.textContent="";
         }
         if (password.length <8) {
+            //αλλάζουμε το χρώμα του background του πεδιου
             passwordfield.style.backgroundColor = "red";
             confirmpasswordfield.style.backgroundColor = "red";
+            //εμφάνηση μηνύματος αφάλματος
             errorPassword.textContent="Τα πεδίο Κωδικος πρέπει να έχει πάνω απο 8 χαρακτήρες μήκος";
             event.preventDefault();
         }else {
+            //αλλάζουμε το χρώμα του background του πεδιου
             passwordfield.style.backgroundColor = "white";
             confirmpasswordfield.style.backgroundColor = "white";
+            //καθαρισμός μηνύματος αφάλματος
             errorPassword.textContent="";
         }
         const passwordRegex = /^(?=.*\d)(?=.*[A-Z])[a-zA-Z0-9]{8,}$/;
         if (passwordRegex.test(password)) {
+            //αλλάζουμε το χρώμα του background του πεδιου
             passwordfield.style.backgroundColor = "white";
             confirmpasswordfield.style.backgroundColor = "white";
+            //καθαρισμός μηνύματος αφάλματος
             errorPassword.textContent="";
         }else {
+            //αλλάζουμε το χρώμα του background του πεδιου
             passwordfield.style.backgroundColor = "red";
             confirmpasswordfield.style.backgroundColor = "red";
+            //εμφάνηση μηνύματος αφάλματος
             errorPassword.textContent="Τα πεδίο Κωδικος πρέπει να περιέχει τουλάχιστον 1 Κεφαλαίο γράμμα και τουλάχιστον 1 Νούμερο";
             event.preventDefault();
         }
@@ -51,35 +80,47 @@ if (form != null) {
 }
 
 function openFormWindow() {
+    //μεγεθος παραθυρου
     var width = 640;
     var height = 600;
+    //τοποθέτηση παραθύρου στο κέντρο
     var left = (screen.width - width) / 2;
     var top = (screen.height - height) / 2;
+    //ανοιγμα popup παραθύρου
     popup = window.open("announcements/addnew", "Προσθήκη Νέας Ανακοίνωσης", "width=" + width + ", height=" + height + ", top=" + top + ", left=" + left );
 }
 
 
 function filterTable() {
+    //δηλώνουμε μια σταθερά με το όνομα dropdown1 που αναφέρεται σε ένα στοιχείο filterDropdown1 με
+    //την χρήση της μεθόδου getElementById και παίρνουμε την τιμή της
     var dropdown1 = document.getElementById("filterDropdown1");
     var filter1 = dropdown1.value;
+    //δηλώνουμε μια σταθερά με το όνομα dropdown2 που αναφέρεται σε ένα στοιχείο filterDropdown2 με
+    //την χρήση της μεθόδου getElementById και παίρνουμε την τιμή της
     var dropdown2 = document.getElementById("filterDropdown2");
     var filter2 = dropdown2.value;
+    //δηλώνουμε μια σταθερά με το όνομα table που αναφέρεται σε ένα στοιχείο search-results με
+    //την χρήση της μεθόδου getElementById
     var table = document.getElementById("search-results");
+    //παίρνουμε το περιεχόμενο κάθε tr
     var rows = table.getElementsByTagName("tr");
     for (var i = 1; i < rows.length; i++) {
+        //παίρνουμε το περιεχόμενο κάθε td
         var cells = rows[i].getElementsByTagName("td");
+        //δηλωση να μην φαίνεται η γραμμή του πίνακα
         var visible = false;
-        for (var j = 0; j < cells.length; j++) {
-            var cell = cells[j];
-            if (cell) {
-                var nomos = cells[2].innerText;
-                var kausimo = cells[3].innerText
-                if ((filter1 === "all" || nomos.includes(filter1)) && (filter2 === "all" || kausimo.includes(filter2))) {
-                    visible = true;
-                    break;
-                }
-            }
+        //πεδίο Νομός κάθε γραμμής
+        var nomos = cells[2].innerText;
+        //Πεδίο Καύσιμο κάθε γραμμής
+        var kausimo = cells[3].innerText
+        //ελεγχος αν το filter1 είναι all ή είναι ίσο με το nomow και έλεγχος αν το filter2 είναι all
+        //ή αν είναι ίσο με το kausimo
+        if ((filter1 === "all" || nomos.includes(filter1)) && (filter2 === "all" || kausimo.includes(filter2))) {
+            visible = true;
+            break;
         }
+        // αν visible = true εμφανίζεται κανονικα αλιως δνε εμφανίζεται
         if (visible) {
             rows[i].style.display = "";
         } else {
@@ -89,5 +130,6 @@ function filterTable() {
 }
 
 function closeFormWindow() {
+    //κλείσιμο παραθύρου popup
     window.close();
 }

@@ -4,7 +4,9 @@
         //protected variable declare which db table to use in this model
         protected $db_table = 'prosfores';
         protected $order_col = "price_prosforas";
+        protected $order_col2 = "id_prosforas";
         protected $order_type = "asc";
+        protected $order_type2 = "desc";
         protected $limit = 100;
         protected $offset = 0;
         protected $update_id = 'id_prosforas';

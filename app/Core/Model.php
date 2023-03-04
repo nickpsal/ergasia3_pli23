@@ -48,6 +48,26 @@
             }
             return false;
         }
+
+        public function get_prosfora_from_user($data, $data_not  =  []) {
+            $keys = array_keys($data); 
+            $keys_not = array_keys($data_not);
+            $query = "SELECT * FROM $this->db_table  where ";
+            foreach($keys as $key){
+                $query .= $key . "=:" . $key .  " && ";
+            }
+            foreach($keys_not as $key){
+                $query .= $key . " !=:" . $key .  " && ";
+            }
+            $query = trim($query, " &&");
+            $query .= " ORDER BY $this->order_col2 $this->order_type2 limit $this->limit offset $this->offset";
+            $data = array_merge($data, $data_not);
+            $result = $this->query($query, $data);
+            if ($result) {
+                return $result[0];
+            }
+            return false;
+        }
         
         public function join_tables_from_db($columns, $field, $table, $data) {
             $keys = array_keys($data); 

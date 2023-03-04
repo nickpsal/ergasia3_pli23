@@ -3,16 +3,21 @@
         use Controller;
         public function index($data = []){
             $data['title'] = 'Καταχώρηση';
-            //get the menu items from database
+            //αρχικοποίηση model
             $menu = new Menu;
             $data['menu-items'] = $menu->find_all_data_from_db();
             $request = new Request;
+            //έλεγχος εν εινια post
             if ($request->is_post()) {
+                //αρχικοποίηση model
                 $prosfores = new Prosfores;
+                //παιρνουμε το id του χρήστη απο την $_SESSION
                 $search_query['id_user'] = $_SESSION['user_data']->id_user;
-                $prosfores_data = $prosfores->get_first_query_db($search_query);
-                if (empty($prosfores_data) || $prosfores_data->ending_date_prosforas < get_date()) {
+                //βρίσκουμε την προσφορά του συγκεκριμένου χρήστη
+                $prosfores_data = $prosfores->get_prosfora_from_user($search_query);
+                if (empty($prosfores_data) || $prosfores_data->ending_date_prosforas > get_date()) {
                     $data_to_insert = $_POST;
+                    //αρχικοποίηση model
                     $user = new User;
                     $user_data = $user->get_first_query_db($search_query);
                     $data_to_insert['id_user'] = $user_data->id_user;
@@ -35,7 +40,9 @@
                     message("Ο διαχειρηστής δεν έχει δικαιώματα να κάνει Νέα Καταχώρηση");
                     redirect('home');
                 }else if (!empty($_SESSION['user_data']) && $_SESSION['user_data']->role_user === '1'){
+                    //αρχικοποίηση model
                     $dimos = new Dimos;
+                    //αρχικοποίηση model
                     $kausimo = new Kausimo;
                     $search_query_1['id_kentrou'] = $_SESSION['user_data']->dimos_user;
                     $search_query_2['id_kausimou'] = $_SESSION['user_data']->eidos_kausimou;
@@ -43,6 +50,7 @@
                     $kausimo_data = $kausimo->get_first_query_db($search_query_2);
                     $data['dimos'] = $dimos_data->name_dimos;
                     $data['kausimo'] = $kausimo_data->tipos_kausimou;
+                    //προβολή σελίδας
                     $this->view('submit', $data); 
                 }else {
                     message("Θα πρέπει να κάνετε εγγραφή αν δεν έχετε λογαριασμό ή να συνδεθείτε για να κάνετε Νέα Καταχώρηση");
