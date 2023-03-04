@@ -2,7 +2,6 @@
     trait Database {
         // Private property to hold the database connection
         private $pdo;
-
         // Private method to connect to the database if needed
         private function connect() {
             // Check if the database connection has already been established
