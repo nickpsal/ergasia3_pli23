@@ -1,30 +1,30 @@
 <?php
     trait Controller {
-        // show the view file
+        //προβολή της view της σελίδας
         public function view($view, $data = []){
-            //header location
+            //τοποθεσία του header
             $header = "../app/Views/includes/header.php";
-            //view filename
+            //ορισμος path της view
             $filename = "../app/Views/" . $view . ".view.php";
-            //footer location
+            //τοποθεσία footer 
             $footer = "../app/Views/includes/footer.php";
-            //check if header file exists and loaded it
+            //Κανουμε έλεγχο αν υπάρχιε το header και το φορτώνουμε
             if (file_exists($header)) {
                 require $header;
             }else {
-                echo "dont found";
+                echo "not found";
             }
-            //check if view exists and loaded it else loads the 404 view
+            //Κανουμε έλεγχο αν υπάρχιε το view και το φορτώνουμε
             if (file_exists($filename)){
                 require $filename;
             }else {
                 require "../app/Views/404.view.php";
             }
-            //check if the footer file exists
+            //Κανουμε έλεγχο αν υπάρχιε το footer και το φορτώνουμε
             if (file_exists($footer)) {
                 require $footer;
             }else {
-                echo "dont found";
+                echo "not found";
             }
         }
 

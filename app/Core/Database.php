@@ -1,57 +1,56 @@
 <?php    
     trait Database {
-        // Private property to hold the database connection
+        // Private property για να κράτει το conenction της βασης Δεδομένων
         private $pdo;
-        // Private method to connect to the database if needed
+        // Private method για σύνδεση σητν Βάση Δεδομένων
         private function connect() {
-            // Check if the database connection has already been established
+            // Ελεχος αν έχει γίνει ήδη σύνδεση στην Βάση Δεδομένων
             if (!$this->pdo) {
                 try {
-                    // Construct the connection string using constants defined elsewhere
+                    // κατασκεύη του stirng για σύνδεση στην Βάση Δεδομένων
                     $string = "mysql:host=" . DB_HOST . ";dbname=" . DB_NAME;
-
-                    // Create a new PDO object with the connection string and login credentials
+                    // Δημιουργία Νέου αντικειμένου pdo με τα credentials της Βασης Δεδομένων
                     $this->pdo = new PDO($string, DB_USER, DB_PASS);
-
-                    // Set error reporting mode to exceptions
+                    // Αναφορα λαθών
                     $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                 } catch (PDOException $e) {
-                    // If an exception is thrown while connecting, throw a new exception with a custom error message
+                    //Μήνυμα σφάλματος σε περίπτωση που δημιουργηθεί σφάλμα
                     throw new Exception("Database connection failed: " . $e->getMessage());
                 }
             }
-            // Return the database connection object
+            // Επιστροφη του αντικειμένου Σύνδεσης
             return $this->pdo;
         }
 
-        // Public method to execute queries on the database
+        // μεθοδος εκτέλεσης query στην βαση δεδομένων
         public function query($query, $query_data = []) {
-            // Record the time at which the query started
+            // Καταγραφή της ώρας που ξεκίνησε το query
             $start_time = microtime(true);
-            // Establish a connection to the database
+            // Δημιουργία Σύνδεσης στην Βάση Δεδομένων
             $con = $this->connect();
             try {
-                // Prepare the SQL query
+                //Προςτοιμασία του sql query
                 $stm = $con->prepare($query);
-                // Execute the query with any bound parameters
+                // Εκτέλεση του query μαζι με παραμέτρους αν έχουν περαστεί
                 $check = $stm->execute($query_data);
-                // If the query failed to execute, throw a new exception with the error information
+                // Σε περίπτωση αποτυχίας του query βγάζουμε σφάλμα
                 if (!$check) {
                     throw new Exception("Query execution failed: " . implode(" ", $stm->errorInfo()));
                 }
-                // Fetch all results and return as an array of objects
+                // Παιρνουμε τα αποτελέσματα και τα επιστρέφουμε σε λίστα
                 $result = $stm->fetchAll(PDO::FETCH_OBJ);
                 return $result;
             } catch (PDOException $e) {
-                // If an exception is thrown while executing the query, throw a new exception with a custom error message
+                // Σε περίπτωση αποτυχίας του query βγάζουμε σφάλμα
                 throw new Exception("Query execution failed: " . $e->getMessage());
             } finally {
-                // Record the time at which the query ended
+                // Καταγραφή της ώρας που τελείωσε το query
                 $end_time = microtime(true);
-                // Calculate the execution time in milliseconds
+                // Υπολογισμός του χρόνου εκτέλεσης
                 $execution_time = ($end_time - $start_time) * 1000;
-                // Log the query and execution time to the server's error log
+                // Κάνουμε καταγραφή του query και του χρόνου εκτέλεσης
                 $log_message = $query . " [" . number_format($execution_time, 2) . " ms]";
+                //καταγραφή σφαλμάτων στο error log
                 error_log($log_message);
             }
         }

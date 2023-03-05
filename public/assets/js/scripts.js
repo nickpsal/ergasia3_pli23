@@ -92,35 +92,36 @@ function openFormWindow() {
 
 
 function filterTable() {
-    //δηλώνουμε μια σταθερά με το όνομα dropdown1 που αναφέρεται σε ένα στοιχείο filterDropdown1 με
-    //την χρήση της μεθόδου getElementById και παίρνουμε την τιμή της
+    //παίρνουμε το πρώτο πεδιο που επέλεψε ο χρήτης για φιλτράρισμα
     var dropdown1 = document.getElementById("filterDropdown1");
     var filter1 = dropdown1.value;
-    //δηλώνουμε μια σταθερά με το όνομα dropdown2 που αναφέρεται σε ένα στοιχείο filterDropdown2 με
-    //την χρήση της μεθόδου getElementById και παίρνουμε την τιμή της
+    //παίρνουμε το δεύτερο πεδιο που επέλεψε ο χρήτης για φιλτράρισμα
     var dropdown2 = document.getElementById("filterDropdown2");
     var filter2 = dropdown2.value;
-    //δηλώνουμε μια σταθερά με το όνομα table που αναφέρεται σε ένα στοιχείο search-results με
-    //την χρήση της μεθόδου getElementById
+    //ορίζουμε τον πίνακα table με την χρήση της getElementById
     var table = document.getElementById("search-results");
-    //παίρνουμε το περιεχόμενο κάθε tr
+    //βρίσκουμε όλα τα tr στον πίνακα ππυ πείραμε
     var rows = table.getElementsByTagName("tr");
     for (var i = 1; i < rows.length; i++) {
-        //παίρνουμε το περιεχόμενο κάθε td
+        //βρίσκουμε όλα τα td στον πίνακα ππυ πείραμε
         var cells = rows[i].getElementsByTagName("td");
-        //δηλωση να μην φαίνεται η γραμμή του πίνακα
+        //απο προεπιλογή να μην φαίενται καμια γραμμή
         var visible = false;
-        //πεδίο Νομός κάθε γραμμής
-        var nomos = cells[2].innerText;
-        //Πεδίο Καύσιμο κάθε γραμμής
-        var kausimo = cells[3].innerText
-        //ελεγχος αν το filter1 είναι all ή είναι ίσο με το nomow και έλεγχος αν το filter2 είναι all
-        //ή αν είναι ίσο με το kausimo
-        if ((filter1 === "all" || nomos.includes(filter1)) && (filter2 === "all" || kausimo.includes(filter2))) {
-            visible = true;
-            break;
+        for (var j = 0; j < cells.length; j++) {
+            //τσεκάρουμε κάθε γραμμή για τις τιμές των φίλτρων
+            var cell = cells[j];
+            if (cell) {
+                //επιλέγουμε ποια κελία θα ψάχνει για τις τιμές των φίλτρων
+                var nomos = cells[2].innerText;
+                var kausimo = cells[3].innerText
+                //ελεγχουμε αν το filter1 ή το filter2 είναι all ή καποια τιμή. Αν ειναι all φαινοτναι ολα αν ειναι καποια
+                //αλλη τιμη ελεγχουμε αν το συγκεκριμενο field περιεχεται στο filter2 ή στο filter2.
+                if ((filter1 === "all" || nomos.includes(filter1)) && (filter2 === "all" || kausimo.includes(filter2))) {
+                    visible = true;
+                    break;
+                }
+            }
         }
-        // αν visible = true εμφανίζεται κανονικα αλιως δνε εμφανίζεται
         if (visible) {
             rows[i].style.display = "";
         } else {
@@ -132,4 +133,6 @@ function filterTable() {
 function closeFormWindow() {
     //κλείσιμο παραθύρου popup
     window.close();
+    //ανανέωση της σελίδας με τις ανακοινώσεις
+    window.opener.location.reload();
 }

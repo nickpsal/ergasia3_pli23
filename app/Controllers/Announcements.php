@@ -71,17 +71,20 @@
                 if (empty($_SESSION['user_data'])) {
                     //μήνυμα σφάλματος και redirection στην σελίδα login 
                     message("Πρέπει να συνδεθείτε σαν διαχειρηστής για να Διαγράψετε κάποια Ανακοίνωση");
-                    redirect('home');
+                    redirect('login');
                 //έλεγχος αν έχει συνδεθεί κάποιςο χρήστης και άν έχει δικαιώματα διαχειρηστή
                 //αν το role_user είναι 2 είναι διαχειρηστής αλλίως είναι εταιρία
                 }else if (!empty($_SESSION['user_data']) && $_SESSION['user_data']->role_user === '2') {
                     //αρχικοποίηση μοντέλου
                     $a = new Anakoinoseis;
-                    //διαγρφή ανακοίνωσης απο την Βάση Δεδομένων με βάση το id
-                    $a->delete_data_from_db($data[2]);
-                    //μήνυμα επιτυχίας και redirection στην σελιδα announcements
-                    message("Η Ανακοίνωση με ID = $data[2] διαγράφτηκε με Επιτυχία");
-                    redirect('announcements');
+                    if (!empty($data[2])) {
+                        //διαγρφή ανακοίνωσης απο την Βάση Δεδομένων με βάση το id
+                        $a->delete_data_from_db($data[2]);
+                        //μήνυμα επιτυχίας και redirection στην σελιδα announcements
+                        message("Η Ανακοίνωση με ID = $data[2] διαγράφτηκε με Επιτυχία");
+                    }else {
+                        redirect('home');
+                    }
                 }else if (!empty($_SESSION['user_data']) && $_SESSION['user_data']->role_user === '1') {
                     message("Δεν έχετε δικαιώματα να Διαγράψετε κάποια Ανακοίνωση. Παρακαλώ επικοινωνήστε με τον διαχειρηστή <a href='mailto:std080926@ac.eap.gr'>Send Email</a>");
                     redirect('home');
