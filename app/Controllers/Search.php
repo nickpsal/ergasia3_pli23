@@ -28,9 +28,8 @@
                 $min_dif = $avg[$i]->avg;
                 for ($j=0; $j<count($prosfores_get_data); $j++) {
                     if ($avg[$i]->id_kausimou == $prosfores_get_data[$j]->id_kausimou) {
-                        $dif = $avg[$i]->avg - $prosfores_get_data[$j]->price_prosforas;
+                        $dif = abs($avg[$i]->avg - $prosfores_get_data[$j]->price_prosforas);
                         if ($dif < $min_dif) {
-                            //$min_dif = $dif;
                             $min_dif_id = $j;
                         }
                     }
