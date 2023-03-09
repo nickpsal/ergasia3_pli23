@@ -90,6 +90,12 @@ function openFormWindow() {
     popup = window.open("announcements/addnew", "Προσθήκη Νέας Ανακοίνωσης", "width=" + width + ", height=" + height + ", top=" + top + ", left=" + left );
 }
 
+function closeFormWindow() {
+    //κλείσιμο παραθύρου popup
+    window.close();
+    //ανανέωση της σελίδας με τις ανακοινώσεις
+    window.opener.location.reload();
+}
 
 function filterTable() {
     //παίρνουμε το πρώτο πεδιο που επέλεψε ο χρήτης για φιλτράρισμα
@@ -128,11 +134,4 @@ function filterTable() {
             rows[i].style.display = "none";
         }
     }
-}
-
-function closeFormWindow() {
-    //κλείσιμο παραθύρου popup
-    window.close();
-    //ανανέωση της σελίδας με τις ανακοινώσεις
-    window.opener.location.reload();
 }
