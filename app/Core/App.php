@@ -36,7 +36,7 @@
             call_user_func_array([$controller, $this->method], [$url]);
         }
 
-        //χωρ΄ζιουμε το url σε λίσατ
+        //χωρίζουμε το url σε λίσατ
         private function splitURL() {
             if (empty($_GET['url'])) {
                 redirect('home');
