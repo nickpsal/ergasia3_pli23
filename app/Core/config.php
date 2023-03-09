@@ -15,8 +15,6 @@
         $path = implode('/', array_slice($parts, 0, count($parts) - 1));
         define('ROOT', $path . "/public");
         define('URL', $path . "/");
-        //define('ROOT', "http://127.0.0.1/psaltakis_nikolaos_ge3_pli23/public");
-        //define('URL', "http://127.0.0.1/psaltakis_nikolaos_ge3_pli23/");
         define('DB_HOST', 'localhost');
         define('DB_USER', 'root');
         define('DB_PASS', 'toor');
