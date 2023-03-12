@@ -7,7 +7,7 @@
             $menu = new Menu;
             $data['menu-items'] = $menu->find_all_data_from_db();
             $request = new Request;
-            //έλεγχος εν εινια post
+            //έλεγχος εν ειναι post
             if ($request->is_post()) {
                 //αρχικοποίηση model
                 $prosfores = new Prosfores;
