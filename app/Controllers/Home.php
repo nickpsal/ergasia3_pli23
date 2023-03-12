@@ -21,7 +21,7 @@
             $data['min_max'] = $min_max;
             $a = new Anakoinoseis;
             //παίρνουμε τα δεδομένα απο την Βάση δεδομένων του μοντελου
-            $data['anakoinoseis'] = $a->find_all_data_from_db();
+            $data['anakoinoseis'] = $a->get_annakoinoseis_home_page();
             //δείχνουμε την view μαζι με τα δεδομένα
             $this->view('home', $data); 
         }

@@ -8,6 +8,12 @@
             return $this->query($query);
         }
 
+        //παίρνουμε όλα τα δεδομένα απο συγκεκριμενο πίνακα και κάνουμε ταξινόμηση αλλα παίρνουμε διαφορετικό limit
+        public function get_annakoinoseis_home_page() {
+            $query = "SELECT * FROM $this->db_table ORDER BY $this->order_col $this->order_type limit $this->limit2 offset $this->offset";
+            return $this->query($query);
+        }
+
         //παίρνουμε όλα τα δεδομένα απο τον πίνακα prosfores που έχουν ημερομηνία μεγαλύτερη απο την σημερινή
         public function find_all_prosfores_from_db() {
             $query = "SELECT * FROM $this->db_table WHERE ending_date_prosforas >= CURDATE() ORDER BY $this->order_col $this->order_type limit $this->limit offset $this->offset";

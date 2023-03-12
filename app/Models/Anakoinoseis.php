@@ -6,6 +6,7 @@
         protected $order_col = "id_anakoinosis";
         protected $order_type = "desc";
         protected $limit = 10;
+        protected $limit2 = 3;
         protected $offset = 0;
         protected $update_id = 'id_anakoinosis';
         //allowed columns of the db
