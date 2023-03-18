@@ -82,6 +82,7 @@
                         $a->delete_data_from_db($data[2]);
                         //μήνυμα επιτυχίας και redirection στην σελιδα announcements
                         message("Η Ανακοίνωση με ID = $data[2] διαγράφτηκε με Επιτυχία");
+                        redirect('announcements');
                     }else {
                         redirect('home');
                     }
