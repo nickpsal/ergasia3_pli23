@@ -7,6 +7,8 @@
                 //αφαιρούμε απο την super global $_SESSION τα δεδομένα του χρήστη
                 unset($_SESSION['user_data']);
                 redirect('home');
+            }else {
+                redirect('home');
             }
         }
     }

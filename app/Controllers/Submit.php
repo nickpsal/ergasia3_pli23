@@ -42,10 +42,13 @@
             } else if ($request->is_get()) {
                 //ελεγχος αν ειναι απο get
                 //ελεγχος αν έχει συνδεθει χρήστης και αν είναι συδεμένος έλεγχος δικαιωμάτων
-                if (!empty($_SESSION['user_data'] && $_SESSION['user_data']->role_user === '2')){
+                if (empty($_SESSION['user_data'])) {
+                    message("Θα πρέπει να κάνετε εγγραφή αν δεν έχετε λογαριασμό ή να συνδεθείτε για να κάνετε Νέα Καταχώρηση");
+                    redirect('login');
+                }else if ($_SESSION['user_data']->role_user === '2'){
                     message("Ο διαχειρηστής δεν έχει δικαιώματα να κάνει Νέα Καταχώρηση");
                     redirect('home');
-                }else if (!empty($_SESSION['user_data']) && $_SESSION['user_data']->role_user === '1'){
+                }else if ($_SESSION['user_data']->role_user === '1'){
                     //αρχικοποίηση model
                     $dimos = new Dimos;
                     //αρχικοποίηση model
@@ -60,9 +63,6 @@
                     $data['kausimo'] = $kausimo_data->tipos_kausimou;
                     //προβολή σελίδας
                     $this->view('submit', $data); 
-                }else {
-                    message("Θα πρέπει να κάνετε εγγραφή αν δεν έχετε λογαριασμό ή να συνδεθείτε για να κάνετε Νέα Καταχώρηση");
-                    redirect('login');
                 }
             }
         }
