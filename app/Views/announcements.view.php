@@ -20,7 +20,7 @@
 						<?php for ($i=0; $i<count($data['anakoinoseis']); $i++) : ?>
 							<?php if (!empty($_SESSION['user_data']) && $_SESSION['user_data']->role_user === '2') :?>
 								<div class="del-button">
-									<a class="button" href="<?=URL?>announcements/delann/<?=$data['anakoinoseis'][$i]->id_anakoinosis?>">Διαγραφή</a>
+									<a class="btn" href="<?=URL?>announcements/delann/<?=$data['anakoinoseis'][$i]->id_anakoinosis?>"><i class="fa-sharp fa-solid fa-trash fa-2x"></i></a>		
 								</div>
 							<?php endif;?>
 							<li>
