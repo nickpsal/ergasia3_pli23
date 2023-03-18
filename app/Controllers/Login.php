@@ -36,7 +36,7 @@
                 }else {
                     //μηνυμα αποτυχίας δεν υπάρχει αυτός ο χρήστης
                     message('Δεν υπάρχει αύτο το όνομα Χρήστη');
-                    redirect('register');
+                    redirect('login');
                 }
             //ελεγχος αν είναι απο get
             }else if ($request->is_get()) {
@@ -44,7 +44,7 @@
                 if (empty($_SESSION['user_data'])) {
                     $this->view('login', $data); 
                 }else {
-                    //Είναι ήδη συδνεμένος Κανουμε redirection στην αρχική
+                    //Είναι ήδη συνδεμένος Κανουμε redirection στην αρχική
                     message("Είστε ήδη συνδεμένοι");
                     redirect('home');
                 }
